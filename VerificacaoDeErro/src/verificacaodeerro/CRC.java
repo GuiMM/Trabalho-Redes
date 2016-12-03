@@ -41,4 +41,25 @@ public class CRC {
         resposta +=mensagem.substring(gerador.length());
         return resposta;
     }
+    
+    public void simulacao(int tamanho,int quantidadePacotes,double probabilidade,int semente, String geradorHex){
+        String mensagem = "";
+        String crcCerto = "";
+        String mensagemcorrompida = "";
+        String crcErrado = "";
+        Auxiliar aux = new Auxiliar();
+        int contadorDeColisao = 0;
+        mensagem = aux.geradorDeMensagem(tamanho, semente);
+        crcCerto = crc(mensagem,tamanho,geradorHex);
+        double taxaColisao = 0.0;
+        for (int i = 0; i < quantidadePacotes; i++) {
+            mensagemcorrompida = aux.geradorDeErro(mensagem, tamanho, probabilidade);
+            crcErrado = crc(mensagemcorrompida,tamanho,geradorHex);
+            if (crcCerto.equalsIgnoreCase(crcErrado)) {
+                contadorDeColisao++;
+            }
+        }
+        taxaColisao = contadorDeColisao/quantidadePacotes;
+        System.out.println("A taxa de colisão do experimento CRC é: " + taxaColisao);
+    }
 }
