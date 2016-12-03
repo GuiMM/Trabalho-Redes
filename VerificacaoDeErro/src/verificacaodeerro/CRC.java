@@ -11,6 +11,8 @@ package verificacaodeerro;
  */
 public class CRC {
     public String crc(String mensagem,int tamanho,String gerador){ //tamanho em bytes
+        int aux = Integer.parseInt(gerador, 16);//passa um hexadecimal para inteiro
+        gerador = Integer.toBinaryString(aux);//passa de decimal para binario
         String crc="00000000";
         mensagem +=crc;
         while(mensagem.length()!= tamanho*8-8) {
