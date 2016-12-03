@@ -26,5 +26,7 @@ public class Principal {
         System.out.println(verifica.checksum(vamo, vamo.length()/8));
         String VamoErrada = teste.geradorDeErro(vamo, vamo.length()/8, 0.5);
         System.out.println(VamoErrada);
+        CRC teste2 = new CRC();
+        System.out.println(teste2.crc(vamo,2, "11100001"));
     }
 }
