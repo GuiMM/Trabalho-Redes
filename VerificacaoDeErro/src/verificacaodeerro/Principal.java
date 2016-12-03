@@ -12,23 +12,15 @@ import java.util.Random;
  * @author Guilherme
  */
 public class Principal {
-     public static void main(String[] args) {
-        // TODO code application logic here
-        String s ="01100001011000100110001101100100"; 
-        String resultado = "";
-        
-        CheckSum verifica = new CheckSum();
-        Auxiliar teste = new Auxiliar();
-        
-        Random gerador = new Random();
-        String vamo = teste.geradorDeMensagem(2,10000);
-        System.out.println(vamo);
-        System.out.println(verifica.checksum(vamo, vamo.length()/8));
-        String VamoErrada = teste.geradorDeErro(vamo, vamo.length()/8, 0.5);
-        System.out.println(VamoErrada);
-        CRC teste2 = new CRC();
-        
-         
-        verifica.simulacao(3, 203003, 0.002, 10000);
+     public static void main(String[] args) {  
+        CheckSum verificaCheck = new CheckSum();
+        CRC verificaCrc = new CRC();
+        int tamanhoPacote = 23;
+        int quantidadePacotes=100000;
+        double probabilidadeDeErro = 0.5;
+        int sementeRandom = 2345;
+        String geradorHex = "121";
+        verificaCheck.simulacao(tamanhoPacote, quantidadePacotes, probabilidadeDeErro, sementeRandom);
+        verificaCrc.simulacao(tamanhoPacote, quantidadePacotes, probabilidadeDeErro, sementeRandom, geradorHex);
     }
 }
