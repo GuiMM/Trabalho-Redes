@@ -60,6 +60,6 @@ public class CRC {
             }
         }
         taxaColisao = contadorDeColisao/quantidadePacotes;
-        System.out.println("A taxa de colisão do experimento CRC é: " + taxaColisao);
+        System.out.println("A taxa de colisão do experimento CRC é: " + taxaColisao+"%");
     }
 }

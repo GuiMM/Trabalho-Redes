@@ -83,6 +83,6 @@ public class CheckSum {
             }
         }
         taxaColisao = contadorDeColisao/quantidadePacotes;
-        System.out.println("A taxa de colisão do Checksum é: "+taxaColisao);
+        System.out.println("A taxa de colisão do Checksum é: "+taxaColisao+"%");
     }
 }
