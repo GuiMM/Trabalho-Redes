@@ -21,7 +21,7 @@ public class Principal {
         Auxiliar teste = new Auxiliar();
         
         Random gerador = new Random();
-        String vamo = teste.geradorDeMensagem(2);
+        String vamo = teste.geradorDeMensagem(2,10000);
         System.out.println(vamo);
         System.out.println(verifica.checksum(vamo, vamo.length()/8));
         String VamoErrada = teste.geradorDeErro(vamo, vamo.length()/8, 0.5);

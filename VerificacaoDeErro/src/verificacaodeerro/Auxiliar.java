@@ -18,9 +18,9 @@ public class Auxiliar {
      */
     
     
-   public String geradorDeMensagem(int tamanho){ //tamanho em bytes
+   public String geradorDeMensagem(int tamanho, int semente){ //tamanho em bytes. usando uma semente para gerar números aleatórios iguais 
        String mensagemGerada = "";
-       Random gerador = new Random();
+       Random gerador = new Random(semente);
        for (int i = 0; i < tamanho*8; i++) {    //tamanho em bytes
           mensagemGerada += gerador.nextInt(2);
        }
