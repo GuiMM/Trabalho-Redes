@@ -64,4 +64,25 @@ public class CheckSum {
     
         return resposta;
     }
+    
+    public void simulacao(int tamanho,int quantidadePacotes,double probabilidade,int semente){
+        String mensagem = "";
+        String checksumCerto = "";
+        String mensagemcorrompida = "";
+        String checksumErrado = "";
+        Auxiliar aux = new Auxiliar();
+        int contadorDeColisao = 0;
+        mensagem = aux.geradorDeMensagem(tamanho, semente);
+        checksumCerto = checksum(mensagem,tamanho);
+        double taxaColisao = 0.0;
+        for (int i = 0; i < quantidadePacotes; i++) {
+            mensagemcorrompida = aux.geradorDeErro(mensagem, tamanho, probabilidade);
+            checksumErrado = checksum(mensagemcorrompida,tamanho);
+            if (checksumCerto.equalsIgnoreCase(checksumErrado)) {
+                contadorDeColisao++;
+            }
+        }
+        taxaColisao = contadorDeColisao/quantidadePacotes;
+        System.out.println(taxaColisao);
+    }
 }

@@ -27,9 +27,8 @@ public class Principal {
         String VamoErrada = teste.geradorDeErro(vamo, vamo.length()/8, 0.5);
         System.out.println(VamoErrada);
         CRC teste2 = new CRC();
-        System.out.println(teste2.crc(vamo,2, "121"));
         
-        int aux = Integer.parseInt("12a", 16);//passa um hexadecimal para inteiro
-         System.out.println(Integer.toBinaryString(aux));;//passa de decimal para binario
+         
+        verifica.simulacao(3, 203003, 0.002, 10000);
     }
 }
