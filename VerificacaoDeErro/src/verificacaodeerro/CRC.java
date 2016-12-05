@@ -42,13 +42,13 @@ public class CRC {
         return resposta;
     }
     
-    public void simulacao(int tamanho,int quantidadePacotes,double probabilidade,int semente, String geradorHex){
+    public void simulacao(int tamanho,double quantidadePacotes,double probabilidade,int semente, String geradorHex){
         String mensagem = "";
         String crcCerto = "";
         String mensagemcorrompida = "";
         String crcErrado = "";
         Auxiliar aux = new Auxiliar();
-        int contadorDeColisao = 0;
+        double contadorDeColisao = 0;
         mensagem = aux.geradorDeMensagem(tamanho, semente);
         crcCerto = crc(mensagem,tamanho,geradorHex);
         double taxaColisao = 0.0;

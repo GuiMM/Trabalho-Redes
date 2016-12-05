@@ -65,13 +65,13 @@ public class CheckSum {
         return resposta;
     }
     
-    public void simulacao(int tamanho,int quantidadePacotes,double probabilidade,int semente){
+    public void simulacao(int tamanho,double quantidadePacotes,double probabilidade,int semente){
         String mensagem = "";
         String checksumCerto = "";
         String mensagemcorrompida = "";
         String checksumErrado = "";
         Auxiliar aux = new Auxiliar();
-        int contadorDeColisao = 0;
+        double contadorDeColisao = 0;
         mensagem = aux.geradorDeMensagem(tamanho, semente);
         checksumCerto = checksum(mensagem,tamanho);
         double taxaColisao = 0.0;
