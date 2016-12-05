@@ -66,6 +66,7 @@ public class CheckSum {
     }
     
     public void simulacao(int tamanho,double quantidadePacotes,double probabilidade,int semente){
+        long tStart = System.currentTimeMillis();
         String mensagem = "";
         String checksumCerto = "";
         String mensagemcorrompida = "";
@@ -82,7 +83,12 @@ public class CheckSum {
                 contadorDeColisao++;
             }
         }
-        taxaColisao = contadorDeColisao/quantidadePacotes;
+        long tEnd = System.currentTimeMillis();
+        long tDelta = tEnd - tStart;
+        double elapsedSeconds = tDelta / 1000.0;
+
+        taxaColisao = (contadorDeColisao/quantidadePacotes) * 100;
         System.out.println("A taxa de colisão do Checksum é: "+taxaColisao+"%");
+        System.out.println("Tempo em segundos: "+elapsedSeconds);
     }
 }

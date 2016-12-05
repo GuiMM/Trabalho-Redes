@@ -15,11 +15,11 @@ public class Principal {
      public static void main(String[] args) {  
         CheckSum verificaCheck = new CheckSum();
         CRC verificaCrc = new CRC();
-        int tamanhoPacote = 23;
-        int quantidadePacotes=100000;
-        double probabilidadeDeErro = 0.5;
-        int sementeRandom = 2345;
-        String geradorHex = "121";
+        int tamanhoPacote = 100;
+        int quantidadePacotes=10000;
+        double probabilidadeDeErro = 0.25;
+        int sementeRandom = 222;
+        String geradorHex = "9B";
         verificaCheck.simulacao(tamanhoPacote, quantidadePacotes, probabilidadeDeErro, sementeRandom);
         verificaCrc.simulacao(tamanhoPacote, quantidadePacotes, probabilidadeDeErro, sementeRandom, geradorHex);
     }
