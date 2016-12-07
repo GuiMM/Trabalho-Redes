@@ -66,7 +66,7 @@ public class CRC {
         double elapsedSeconds = tDelta / 1000.0;
 
         taxaColisao = (contadorDeColisao/quantidadePacotes) * 100;
-        System.out.println("A taxa de colisão do Checksum é: "+taxaColisao+"%");
+        System.out.println("A taxa de colisão do CRC é: "+taxaColisao+"%");
         System.out.println("Tempo em segundos: "+elapsedSeconds);
     }
 }
